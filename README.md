@@ -68,3 +68,51 @@ docker compose down
 ```
 
 O banco de dados utiliza um volume persistente para preservar os dados entre reinicializações.
+
+## Endpoints da API
+
+A API disponibiliza os seguintes endpoints:
+
+| Método HTTP | Endpoint | Descrição |
+|---|---|---|
+| POST | `/produtos` | Cadastrar um produto |
+| GET | `/produtos` | Listar todos os produtos |
+| GET | `/produtos/{id}` | Buscar produto por ID |
+| PUT | `/produtos/{id}` | Atualizar um produto |
+| DELETE | `/produtos/{id}` | Excluir um produto |
+
+## Monitoramento
+
+O Spring Boot Actuator disponibiliza o endpoint de saúde da aplicação:
+
+```text
+http://localhost:8080/actuator/health
+```
+
+O resultado permite verificar o estado da API e a conexão com o PostgreSQL.
+
+## Executando os testes
+
+Para executar os testes automatizados com Maven Wrapper:
+
+No Windows PowerShell:
+
+```powershell
+.\mvnw.cmd test
+```
+
+Para gerar o pacote JAR:
+
+```powershell
+.\mvnw.cmd clean package
+```
+
+O arquivo executável será gerado na pasta `target`.
+
+## Execução do JAR
+
+Com o PostgreSQL disponível e as variáveis de ambiente configuradas, execute:
+
+```powershell
+java -jar target\api-produtos-0.0.1-SNAPSHOT.jar
+```
