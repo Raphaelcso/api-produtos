@@ -15,6 +15,55 @@ O projeto permite cadastrar, listar, consultar, atualizar e excluir produtos, ut
 - Spring Boot Actuator
 - JUnit 5 e Mockito
 
+## Estrutura do projeto
+
+```text
+api-produtos/
+├── .mvn/
+│   └── wrapper/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/exemplo/produtos/
+│   │   │       ├── controller/
+│   │   │       │   └── ProdutoController.java
+│   │   │       ├── model/
+│   │   │       │   └── Produto.java
+│   │   │       ├── repository/
+│   │   │       │   └── ProdutoRepository.java
+│   │   │       ├── service/
+│   │   │       │   └── ProdutoService.java
+│   │   │       └── ApiProdutosApplication.java
+│   │   └── resources/
+│   │       ├── application.properties
+│   │       ├── application-dev.properties
+│   │       └── application-prod.properties
+│   └── test/
+│       └── java/
+│           └── com/exemplo/produtos/
+│               ├── service/
+│               │   └── ProdutoServiceTest.java
+│               └── ApiProdutosApplicationTests.java
+├── .env.example
+├── .gitignore
+├── compose.yaml
+├── Dockerfile
+├── mvnw
+├── mvnw.cmd
+├── pom.xml
+├── README.md
+└── RELATORIO.md
+```
+
+### Organização das camadas
+
+- **controller:** recebe as requisições HTTP e disponibiliza os endpoints da API.
+- **model:** contém a entidade Produto e suas propriedades.
+- **repository:** realiza a comunicação com o banco de dados por meio do Spring Data JPA.
+- **service:** concentra as regras de negócio e operações dos produtos.
+- **resources:** armazena as configurações da aplicação e dos perfis de execução.
+- **test:** contém os testes automatizados da aplicação e da camada de serviço.
+
 ## Funcionalidades
 
 - Cadastrar produtos.
