@@ -83,8 +83,8 @@ Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
 
 ```properties
 DB_NAME=produtos
-DB_USERNAME=postgres
-DB_PASSWORD=postgres
+DB_USERNAME=seu_usuario
+DB_PASSWORD=sua_senha
 DB_URL=jdbc:postgresql://postgres:5432/produtos
 ```
 
